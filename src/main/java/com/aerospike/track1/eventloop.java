@@ -15,7 +15,7 @@ public class eventloop {
     public static void main (String [] args){
         ClientPolicy clientPolicy = new ClientPolicy();
         clientPolicy.eventLoops = createEventLoops(4);
-
+        //kết nối 
         AerospikeClient client = new AerospikeClient("localhost", 3000);
 
         Key key = new Key("test", "demo","key1");

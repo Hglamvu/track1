@@ -6,6 +6,7 @@ import com.aerospike.client.Record;
 
 public class ReadSingleRecord {
     public static void main(String [] args){
+        //kết nối
         AerospikeClient client = new AerospikeClient("localhost", 3000);
 
         Key key = new Key("test","demo", "key_value");

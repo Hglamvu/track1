@@ -9,9 +9,11 @@ import com.aerospike.client.policy.WritePolicy;
 public class MultipleRecords {
 
     public static void writeMultiple(AerospikeClient client, WritePolicy writePolicy ){
+        //tạo các mảng chứa
         String [] keys = {"key1","key2","key3"};
         String [] name = {"vu hoang lam","nguyen hoang a", "le van b"};
         int age[] = {20,21,22};
+        
         for(int i = 0; i < keys.length; i++){
             Key key = new Key("test", "demo", keys[i]);
             Bin bin1 = new Bin("name", name[i]);
@@ -37,6 +39,7 @@ public class MultipleRecords {
         }
     }
     public static void main (String [] args){
+        //kết nối
         AerospikeClient client = new AerospikeClient("localhost", 3000);
         WritePolicy writePolicy = new WritePolicy();
         writeMultiple(client, writePolicy);
